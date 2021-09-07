@@ -1,15 +1,15 @@
 
 import { FormEvent, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+
+import { database } from "../services/firebase";
 import { Button } from "../components/Button";
 import { useAuth } from '../hooks/useAuth'
 
 import illustrationImg from "../assets/images/illustration.svg";
 import logoImg from "../assets/images/logo.svg";
 
-
 import "../styles/auth.scss";
-import { database } from "../services/firebase";
 
 export const NewRoom = () => {
   const { user } = useAuth();
@@ -32,7 +32,7 @@ export const NewRoom = () => {
     });
 
     history.push(`/rooms/${firabaseRoom.key}`);
-    
+
   }
 
   return (
